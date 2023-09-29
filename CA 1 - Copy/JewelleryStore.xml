@@ -1,0 +1,132 @@
+<object-stream>
+  <utils.GenericLinkedList>
+    <head>
+      <next>
+        <contents class="models.DisplayCase">
+          <displayNum>12</displayNum>
+          <displayType>false</displayType>
+          <displayLight>false</displayLight>
+          <displayTrays>
+            <head>
+              <contents class="models.DisplayTray">
+                <TrayNum>A12</TrayNum>
+                <TrayColour>Blue</TrayColour>
+                <TrayWidth>21</TrayWidth>
+                <TrayHeight>30</TrayHeight>
+                <jewelleryItems/>
+              </contents>
+            </head>
+            <temp reference="../head"/>
+          </displayTrays>
+        </contents>
+      </next>
+      <contents class="models.DisplayCase">
+        <displayNum>24</displayNum>
+        <displayType>true</displayType>
+        <displayLight>true</displayLight>
+        <displayTrays>
+          <head>
+            <contents class="models.DisplayTray">
+              <TrayNum>B14</TrayNum>
+              <TrayColour>Black</TrayColour>
+              <TrayWidth>20</TrayWidth>
+              <TrayHeight>30</TrayHeight>
+              <jewelleryItems/>
+            </contents>
+          </head>
+          <temp reference="../head"/>
+        </displayTrays>
+      </contents>
+    </head>
+    <temp reference="../head"/>
+  </utils.GenericLinkedList>
+  <utils.GenericLinkedList>
+    <head>
+      <next>
+        <contents class="models.DisplayTray">
+          <TrayNum>A12</TrayNum>
+          <TrayColour>Blue</TrayColour>
+          <TrayWidth>21</TrayWidth>
+          <TrayHeight>30</TrayHeight>
+          <jewelleryItems>
+            <head>
+              <contents class="models.JewelleryItem">
+                <JewelleryDesc>Gift</JewelleryDesc>
+                <JewelleryType>Necklace</JewelleryType>
+                <JewelleryGender>Unisex</JewelleryGender>
+                <JewelleryImage>weorjdn</JewelleryImage>
+                <JewelleryPrice>150</JewelleryPrice>
+                <materialComponents/>
+              </contents>
+            </head>
+            <temp reference="../head"/>
+          </jewelleryItems>
+        </contents>
+      </next>
+      <contents class="models.DisplayTray">
+        <TrayNum>B14</TrayNum>
+        <TrayColour>Black</TrayColour>
+        <TrayWidth>20</TrayWidth>
+        <TrayHeight>30</TrayHeight>
+        <jewelleryItems>
+          <head>
+            <contents class="models.JewelleryItem">
+              <JewelleryDesc>wer</JewelleryDesc>
+              <JewelleryType>Cuff Link</JewelleryType>
+              <JewelleryGender>Female</JewelleryGender>
+              <JewelleryImage>we</JewelleryImage>
+              <JewelleryPrice>300</JewelleryPrice>
+              <materialComponents/>
+            </contents>
+          </head>
+          <temp reference="../head"/>
+        </jewelleryItems>
+      </contents>
+    </head>
+    <temp reference="../head"/>
+  </utils.GenericLinkedList>
+  <utils.GenericLinkedList>
+    <head>
+      <next>
+        <contents class="models.JewelleryItem">
+          <JewelleryDesc>Gift</JewelleryDesc>
+          <JewelleryType>Necklace</JewelleryType>
+          <JewelleryGender>Unisex</JewelleryGender>
+          <JewelleryImage>weorjdn</JewelleryImage>
+          <JewelleryPrice>150</JewelleryPrice>
+          <materialComponents>
+            <head>
+              <contents class="models.MaterialComponent">
+                <MaterialType>Wood</MaterialType>
+                <MaterialDesc>Oak</MaterialDesc>
+                <MaterialWeight>200</MaterialWeight>
+                <MaterialQuality>5</MaterialQuality>
+              </contents>
+            </head>
+            <temp reference="../head"/>
+          </materialComponents>
+        </contents>
+      </next>
+      <contents class="models.JewelleryItem">
+        <JewelleryDesc>wer</JewelleryDesc>
+        <JewelleryType>Cuff Link</JewelleryType>
+        <JewelleryGender>Female</JewelleryGender>
+        <JewelleryImage>we</JewelleryImage>
+        <JewelleryPrice>300</JewelleryPrice>
+        <materialComponents/>
+      </contents>
+    </head>
+    <temp reference="../head"/>
+  </utils.GenericLinkedList>
+  <utils.GenericLinkedList>
+    <head>
+      <contents class="models.MaterialComponent">
+        <MaterialType>Wood</MaterialType>
+        <MaterialDesc>Oak</MaterialDesc>
+        <MaterialWeight>200</MaterialWeight>
+        <MaterialQuality>5</MaterialQuality>
+      </contents>
+    </head>
+    <temp reference="../head"/>
+  </utils.GenericLinkedList>
+</object-stream>

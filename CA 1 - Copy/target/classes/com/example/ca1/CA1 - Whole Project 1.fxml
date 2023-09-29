@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="455.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <AnchorPane prefHeight="442.0" prefWidth="902.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TabPane layoutX="-1.0" layoutY="-1.0" prefHeight="456.0" prefWidth="902.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Home">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="421.0" style="&#10;" text="Welcome to our Jewellery store" textAlignment="CENTER" textFill="#696868" wrapText="false">
+                                            <font>
+                                                <Font size="30.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="51.0" prefHeight="46.0" prefWidth="416.0" style="&#10;" text="Our store prides itself on supplying only the latest and most fashionable jewellery" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                              <Button fx:id="JewelleryStoreSave" layoutX="22.0" layoutY="352.0" mnemonicParsing="false" onAction="#JewelleryStoreSave" text="Save" />
+                              <Button fx:id="JewelleryStoreLoad" layoutX="105.0" layoutY="352.0" mnemonicParsing="false" onAction="#JewelleryStoreLoad" text="Load" />
+                              <ListView fx:id="viewAllStockListView" layoutX="495.0" layoutY="77.0" prefHeight="302.0" prefWidth="388.0" />
+                              <Button fx:id="reset" layoutX="196.0" layoutY="352.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+                              <Button fx:id="viewAllStockButton" layoutX="495.0" layoutY="48.0" mnemonicParsing="false" onAction="#viewAllStock" text="View All Stock" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#populateCaseView" text="Add Case">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="902.0">
+                                    <children>
+                                        <ListView fx:id="caseListView" layoutX="430.0" layoutY="50.0" onEditStart="#addCaseInfo" prefHeight="342.0" prefWidth="464.0" />
+                                        <Label layoutX="13.0" layoutY="14.0" text="Create a New Display Case" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="90.0" text="Display Case Id" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="11.0" layoutY="49.0" text="Here you can make a new Display Case to house the Trays" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="AddCaseID" layoutX="11.0" layoutY="110.0" />
+                                        <Label layoutX="14.0" layoutY="150.0" text="Display Case Type" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="13.0" layoutY="208.0" text="Display Case Lighting" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="CreateCase" layoutX="11.0" layoutY="362.0" mnemonicParsing="false" onAction="#addCaseInfo" text="Create Case" textFill="#595959" />
+                                        <Label layoutX="430.0" layoutY="14.0" text="View Created Display Cases" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <RadioButton fx:id="AddCaseType_Standing" layoutX="135.0" layoutY="170.0" mnemonicParsing="false" text="Free Standing" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="CaseType" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="AddCaseType_Wall" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" text="Wall Mounted" textFill="#9f9f9f" toggleGroup="$CaseType">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="AddCaseLight_Lit" layoutX="13.0" layoutY="228.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="118.0" text="Lit" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="CaseLighting" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="AddCaseLight_Unlit" layoutX="134.0" layoutY="228.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="119.0" text="Unlit" textFill="#9f9f9f" toggleGroup="$CaseLighting">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </RadioButton>
+                              <Text fill="#696868" layoutX="254.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#populateTrayView" text="Add Tray">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="902.0">
+                                    <children>
+                                        <Label layoutX="13.0" layoutY="14.0" text="Create a New Display Tray" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="90.0" text="Display Tray Id eg A12" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="11.0" layoutY="49.0" text="Here you can make a new Display Tray to house the Jewellery" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="AddTrayID" layoutX="11.0" layoutY="110.0" />
+                                        <Label layoutX="14.0" layoutY="150.0" text="Display Tray Colour" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="13.0" layoutY="208.0" text="Display Tray Dimensions" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="CreateTray" layoutX="11.0" layoutY="362.0" mnemonicParsing="false" onAction="#addTrayInfo" text="Create Tray" textFill="#595959" />
+                                        <ListView fx:id="trayListView" layoutX="430.0" layoutY="50.0" onEditStart="#addTrayInfo" prefHeight="342.0" prefWidth="464.0" />
+                                        <Label layoutX="430.0" layoutY="14.0" text="View Created Display Trays" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="AddTrayColour" layoutX="12.0" layoutY="170.0" prefWidth="150.0" />
+                                        <Label layoutX="11.0" layoutY="228.0" text="Width" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="105.0" layoutY="228.0" text="Height" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="AddTrayDimensions_Width" layoutX="12.0" layoutY="248.0" prefHeight="26.0" prefWidth="81.0" />
+                                        <TextField fx:id="AddTrayDimensions_Height" layoutX="106.0" layoutY="248.0" prefHeight="26.0" prefWidth="81.0" />
+                              <Label layoutX="204.0" layoutY="90.0" text="Choose Display Case" textFill="#696868">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="AddTrayCase" layoutX="204.0" layoutY="109.0" onEditStart="#populateCaseSelectListView" prefHeight="118.0" prefWidth="202.0" />
+                              <Button layoutX="838.0" layoutY="19.0" mnemonicParsing="false" onAction="#refreshTrayView" text="Refresh" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#populateJewelView" text="Add Jewellery">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="13.0" layoutY="14.0" text="Create a New Jewellery Item" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="11.0" layoutY="49.0" text="Here you can make a new piece of Jewellery to display" textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="AddJewelleryType" layoutX="11.0" layoutY="111.0" prefWidth="150.0" />
+                                        <Label layoutX="14.0" layoutY="90.0" text="Jewellery Type" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="151.0" text="Jewellery Gender" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="AddJewelleryGender" layoutX="12.0" layoutY="170.0" prefWidth="150.0" />
+                                        <Label layoutX="13.0" layoutY="209.0" text="Jewellery Price ( In Euro )" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="AddJewelleryPrice" layoutX="13.0" layoutY="230.0" />
+                                        <TextArea fx:id="AddJewelleryDesc" layoutX="190.0" layoutY="109.0" prefHeight="87.0" prefWidth="200.0" />
+                                        <TextField fx:id="AddJewelleryImage" layoutX="14.0" layoutY="290.0" />
+                                        <Label layoutX="13.0" layoutY="268.0" text="Jewellery Image ( as URL )" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="192.0" layoutY="90.0" text="Jewellery Description" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="CreateJewellery" layoutX="11.0" layoutY="362.0" mnemonicParsing="false" onAction="#addJewelleryInfo" text="Create Jewellery" />
+                                        <ListView fx:id="jewelleryListView" layoutX="430.0" layoutY="50.0" onEditStart="#addJewelleryInfo" prefHeight="305.0" prefWidth="464.0" />
+                                        <Label layoutX="430.0" layoutY="14.0" text="View Created Jewellery Items" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                              <Text fill="#696868" layoutX="192.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Display Tray">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ListView fx:id="AddJewelTray" layoutX="190.0" layoutY="230.0" prefHeight="125.0" prefWidth="200.0" />
+                              <Button fx:id="deleteJewellery" layoutX="288.0" layoutY="362.0" mnemonicParsing="false" text="Delete Jewellery" />
+                              <Button fx:id="TotalValueButton" layoutX="451.0" layoutY="362.0" mnemonicParsing="false" onAction="#valueJewellery" text="Value All Stock" />
+                              <ListView fx:id="TotalValueListView" layoutX="562.0" layoutY="361.0" prefHeight="28.0" prefWidth="200.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#populateMatJewelListView" text="Add Material">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="13.0" layoutY="14.0" text="Create a New Material " textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="11.0" layoutY="49.0" text="Here you can make a new Material to make Jewellery out of " textFill="#9f9f9f">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="AddMaterialType" layoutX="11.0" layoutY="111.0" prefWidth="150.0" />
+                                        <TextField fx:id="AddMaterialQuality" layoutX="13.0" layoutY="230.0" />
+                                        <TextField fx:id="AddMaterialWeight" layoutX="12.0" layoutY="170.0" />
+                                        <Label layoutX="14.0" layoutY="90.0" text="Material Type" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="151.0" text="Material Weight ( in grams )" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="13.0" layoutY="209.0" text="Material Quality" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="192.0" layoutY="90.0" text="Material Description" textFill="#696868">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="AddMaterialDesc" layoutX="190.0" layoutY="109.0" prefHeight="146.0" prefWidth="200.0" />
+                                        <Button fx:id="CreateMaterial" layoutX="11.0" layoutY="362.0" mnemonicParsing="false" onAction="#addMaterialInfo" text="Add Material" />
+                                        <Label layoutX="430.0" layoutY="14.0" text="View Created Materials" textFill="#696868">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <ListView fx:id="materialListView" layoutX="430.0" layoutY="50.0" onEditStart="#addMaterialInfo" prefHeight="342.0" prefWidth="464.0" />
+                              <ListView fx:id="AddMatJewel" layoutX="190.0" layoutY="284.0" prefHeight="107.0" prefWidth="200.0" />
+                              <Text fill="#686969" layoutX="192.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Jewellery ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

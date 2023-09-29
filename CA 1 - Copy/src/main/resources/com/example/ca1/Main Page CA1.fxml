@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" >
+      <items>
+        <AnchorPane>
+               <children>
+                  <Button fx:id="MainAddCase" layoutX="11.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#displayAddCase" prefHeight="26.0" prefWidth="99.0" text="Case"  />
+                  <Button fx:id="MainSmartAdd" layoutX="9.0" layoutY="192.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="204.0" text="Smart Add" />
+                  <Button fx:id="MainRemove" layoutX="9.0" layoutY="253.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="204.0" text="Remove Item" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Available Site Options" textAlignment="CENTER" wrapText="false">
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
+                     </textFill>
+                     <font>
+                        <Font size="18.0" fx:id="x11" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="7.0" layoutY="50.0" prefHeight="22.0" prefWidth="50.0" style="&#10;" text="Search" textAlignment="CENTER" wrapText="false">
+                     <textFill>
+                        <Color red="0.624" green="0.624" blue="0.624" fx:id="x221" />
+                     </textFill>
+                     <font>
+                        <Font size="15.0" fx:id="x111" />
+                     </font>
+                  </Label>
+                  <Button fx:id="MainValue" layoutX="9.0" layoutY="312.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="204.0" text="Value Items" />
+                  <TextField fx:id="MainSearch" layoutX="10.0" layoutY="72.0" prefHeight="26.0" prefWidth="204.0" />
+                  <Button fx:id="MainReset" layoutX="9.0" layoutY="499.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="204.0" text="Reset Store" />
+                  <Button fx:id="MainStock" layoutX="9.0" layoutY="376.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="204.0" text="View All Stock" />
+                  <Button fx:id="MainBrowse" layoutX="9.0" layoutY="437.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="204.0" text="Browse" />
+                  <Button fx:id="MainAddMat" layoutX="110.0" layoutY="152.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Material" />
+                  <Button fx:id="MainAddJewel" layoutX="11.0" layoutY="152.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Jewellery" />
+                  <Button fx:id="MainAddTray" layoutX="110.0" layoutY="125.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" text="Tray" />
+                  <Label layoutX="18.0" layoutY="108.0" text="Add a ..." textFill="#9f9f9f" />
+               </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="294.0" prefWidth="670.0">
+          <content>
+            <AnchorPane id="Content" minWidth="-1.0" prefHeight="566.0" prefWidth="670.0">
+              <children>
+                <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="46.0" prefWidth="421.0" style="&#10;" text="Welcome to our Jewellery store" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <textFill>
+                      <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+                           </textFill></Label>
+                        <Label layoutX="11.0" layoutY="37.0" prefHeight="46.0" prefWidth="416.0" style="&#10;" text="Our store prides itself on supplying only the latest and most fashionable jewellery" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="8.0" layoutY="83.0" prefHeight="466.0" prefWidth="654.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
